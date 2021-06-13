@@ -1,24 +1,290 @@
-<!DOCTYPE html>
-<html>
+<DOCTYPE html>
+<html lang="pt-br" translate="no">
 <head>
-<title>web app</title>
-<script type="text/javascript">
-	const link = new URLSearchParams(window.location.search)
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+<meta charset="utf-8>
+<meta name="keywords" content="Google, Chrome, Diogo, Clone">
+<meta class="statusbar" name="theme-color" content="green">
+<meta class="statusbar" name="msapplication-navbutton-color" content="red">
+<meta class="statusbar" name="apple-mobile-web-app-status-bar-style" content="pink">
+<meta name="google" content="notranslate">
+<meta property=og:image content="https://drive.google.com/uc?export=view&id=1wtqCVujPVb8UcVUHz6gX-_gv7UyJ-2t8"/>
+<link rel="shortcut icon" href="https://drive.google.com/uc?export=view&id=1wtqCVujPVb8UcVUHz6gX-_gv7UyJ-2t8" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://drive.google.com/uc?export=view&id=1wtqCVujPVb8UcVUHz6gX-_gv7UyJ-2t8">
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=description content="Esse WebApp foi desenvolvido 'só na zuera'"/>
+<meta property=og:title content="Diogo Chrome Clone"/>
+<meta property=og:description content="Só pra zuar"/>
+<meta property=og:type content="webapp"/>
+
+<title>Google Chrome Clone By Diogo C.Cass</title>
+<link rel="manifest" href="manifest.json">
+
+<style>
+    :root {
+        --purple1: #805BFF;
+        --back1: #606060;
+        --branco: white;
+        --dark1: #242424;
+        --dark2: #303030;
+        --dark3: #00000010;
+        --dark4: #545454;
+        --dark5: #888888;
+        --blue1: #0075f2;
+        --blue2: #26ffe6;
+    }
+
+    ::-webkit-scrollbar {
+        height:6px;
+        width:6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background: var(--back1);
+    }
+    
+    ::-webkit-scrollbar-button {
+        display: none;
+        
+    }
+
+    * {
+        user-select: none;
+        outline: none;
+        font-family: 'DM Sans', calibri;
+        /*box-sizing: border-box;*/
+    }
+    
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
+body {
+    background-color: var(--branco);
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.new_tab {
+    height: 34px;
+    display: block;
+    margin-left: auto;
+    opacity: 1;
+    transition: 1s;
+}
+
+.logo {
+    height: 70px;
+    margin-top: 15%;
+    transition: 1s;
+}
+
+.mic {
+    height: 28px;
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 16.5%;
+}
+
+input {
+    background-color: rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 50px;
+    padding: 2%;
+    padding-left: 3%;
+    margin-top: 15%;
+    width: 90%;
+    height: 40px;
+}
+
+.inmic {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transition: 1s;
+}
+
+.menu {
+    height: 75px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+.img {
+    height: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    transition: 1s;
+}
+
+#btn{
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    margin-top: -48%;
+    background: #ffc107;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    
+    opacity: 0;
+}
+#btn::before{
+    color: white;
+    font-family: sans-serif;
+    content: 'Gerar?';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    transition: all 0.5s;
+}
+#btn:hover::before{
+    top: -300px;
+}
+#btn::after{
+    content: "Pronto!";
+    color: red;
+    color: white;
+    font-family: sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 140%;
+    transition: all 0.5s;
+    transform: translate(-50%, -50%);
+}
+#btn:hover::after{
+    top: 50%;
+}
+
+.bt {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+i {
+  animation: move 3s both;
+  position relative;
+  margin-left: 40%;
+}
+
+@keyframes move {
+  0%{margin-left: 40%}
+  50%{margin-top: -50%}
+  80%{margin-top: -78; }
+  100%{margin-top: -85%;
+  margin-left: 90%;
+  }
+  
+}
+
+</style>
+<script>
+    window.onload = () => {
+   
+   const link = new URLSearchParams(window.location.search)
+   
 	var nome = link.get("nome");
+	if(nome != null){
 	
-	console.log(nome);
 	
-	window.onload = () => {
+	document.body.innerHTML += "<i class='fa fa-mouse-pointer' aria-hidden='true'></i>";
+	setTimeout(function a(){
+	  alert('Fiz o favor de pesquisar pra você 😽');
+	  window.open("https://www.google.com/search?q="+nome, "minhaJanela", "height=200,width=200");
+	},3010);
 	
-	var dd = document.getElementById("dd");
-	 dd.innerHTML = nome;
-	 alert(nome)
-	}
+document.querySelector("input").value = "🔎 "+nome;
+  }
+  else {
+    document.querySelector("#btn").onclick = () => {
+      copia()
+    }
+  }
+   
+   
+    document.querySelector("input").addEventListener("focus", ()=>{
+        document.querySelector(".new_tab").style = "opacity: 0";
+        document.querySelector(".img").style = "opacity: 0";
+        document.querySelector(".logo").style = "opacity: 0; margin-top: -50%";
+        document.querySelector(".inmic").style = "margin-top: -15%";
+      
+      setTimeout(()=>{ document.querySelector("#btn").style = "opacity: 1; margin-top: -40%";
+      }, 600);
+        
+    })
+}
+
+function infocus() {
+        document.querySelector(".new_tab").style = "opacity: 1";
+        document.querySelector(".img").style = "opacity: 1";
+        document.querySelector(".logo").style = "opacity: 1; margin-top: 15%";
+        document.querySelector(".inmic").style = "margin-top: 1%";
+            document.querySelector("#btn").style = "opacity: 0; margin-top: -50%";
+    
+}
+
+function copia() {
+ 
+ var texto = document.querySelector("input").value;
+ document.querySelector("input").value = "http://localhost:8158/Google.html?nome="+texto;
+  
+  var copyText = document.querySelector("input");
+  copyText.select();
+  document.execCommand("copy");
+  
+  document.querySelector("input").value = "Ok. Agora envia o link para o seu amigo.";
+}
+
+
+
 </script>
+
 </head>
 <body>
 
-<p id="dd">dado</p>
-	hey
+<img src="https://dl.dropbox.com/s/seib5qqawcsjxuu/screenshot_20210612-112410~3.png" class="new_tab"/>
+
+<center>
+    <img src="https://dl.dropbox.com/s/6z7gupytusvfn38/logo_img.png" class="logo"/>
+</center>
+
+
+<div class="inmic">
+<input type="text" class="input" onblur="infocus()" placeholder=" Pesquise alguma coisa">
+
+<img src="https://dl.dropbox.com/s/efrm99fq1e4zzz7/voice_search.png" class="mic"/>
+</div>
+
+<img src="https://dl.dropbox.com/s/0qfjak3e9hbcydb/screenshot_20210612-112410~2.png" class="menu"/>
+
+<img src="https://dl.dropbox.com/s/9uj96szg5surfyk/no_post.png" class="img"/>
+<br>
+
+<center>
+<div class="bt">
+<div id="btn"></div>
+</div>
+</center>
 </body>
 </html>
