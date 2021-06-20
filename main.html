@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>🔰✨ Diogo Cass • Portfolio ✨🔰</title>
+        <meta charset="UTF-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script>
+        window.onload = () => {
+    this.onscroll = () => {
+        var top = this.pageYOffset;
+        document.querySelector(".ptext").style.transform = "translateY(-"+top+"%)";
+    }
+    
+    AOS.init({
+        duration: 1200,
+    })
+        
+    
+Swal.fire({
+icon: 'success',
+title: 'Seja Bem Vindo!',
+text: 'Este website ainda esta sendo complementado',
+footer: '<h5 href="https://www.sololearn.com/Profile/19634088/?ref=app">Check my Profile</h5>'
+});
+
+}
+    </script>
+    <style>
+        :root {
+  --purple1: #805BFF;
+  --back1: #606060;
+  --dark1: #242424;
+  --dark2: #303030;
+  --dark3: #000010;
+  --dark4: #545454;
+  --dark5: #888888;
+  --blue1: #0075f2;
+  --blue2: #26ffe6;
+  --white1: #FFFFFF;
+  --white2: #C2C2C2;
+  --white3: #8C8C8C;
+}
+
+::-webkit-scrollbar {
+    width:1px;
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    background: black;
+}
+    
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+* {
+    user-select: none;
+    outline: none;
+    font-family: 'DM Sans', calibri;
+    box-sizing: border-box;
+}
+
+html { 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden; 
+    font-family: "Monument Extended", Arial, Helvetica, sans-serif;
+} 
+
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: var(--dark3);
+    perspective: 1px; 
+    transform-style: preserve-3d; 
+    /*
+    height: 100%; 
+    width: 100%; 
+    */
+    overflow-y: scroll; 
+    overflow-x: hidden;
+} 
+
+header {
+    box-sizing: border-box; 
+    min-height: 100vh; 
+    position: relative; 
+    transform-style: inherit;
+    width: 100vw;
+    text-align: center; 
+    text-transform: uppercase;
+ } 
+ 
+header, header:before {
+     background: 50% 50% / cover;
+}
+ 
+header h1 { 
+ margin: 0; 
+ position: absolute; 
+ top: 50%; 
+ left: 50%; 
+ transform: translate(-50%, -50%);
+} 
+ 
+header::before { 
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    display: block;
+    background: url('https://images.unsplash.com/photo-1443890923422-7819ed4101c0?ixlib=rb-0.3.5&s=7949722a90a50c06b49fed9f670114a5&auto=format&fit=crop&w=750&q=80') no-repeat center center; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover;  
+    margin:0;
+    padding:0;
+    background-size: cover; 
+    transform-origin: center center 0; 
+    transform: translateZ(-1px) scale(2); 
+    z-index: -1; 
+    min-height: 100vh;
+}
+ 
+section { 
+    z-index: 2; 
+    position: absolute; 
+    top: 100vh; 
+    background-color: var(--dark3); 
+    line-height: 30px; 
+    font-weight: lighter; 
+    padding: 40px; 
+    color: grey;
+}
+
+.ptext {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-size: 16px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.ptext .border {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+}
+
+
+
+h2 {
+    text-align: center;
+    padding-bottom: 8%;
+    font-size: 25px;
+    font-weight: 600;
+    background: linear-gradient(140deg,var(--purple1),var(--blue1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+
+
+
+/*
+
+  background-image: url('https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5b1016b885e7438c4633109d77368d4d&auto=format&fit=crop&w=751&q=80
+  
+  background-image: url('https://images.unsplash.com/photo-1443890923422-7819ed4101c0?ixlib=rb-0.3.5&s=7949722a90a50c06b49fed9f670114a5&auto=format&fit=crop&w=750&q=80
+  
+  background-image: url('http://68.media.tumblr.com/562bbf117a2766c0dc8e4641d2f5fc3f/tumblr_onjzeiFuWs1qdeuyro1_1280.jpg
+
+*/
+
+.play{
+    width: 100%;
+    background: #f1f3f4;
+    box-shadow: 0 50px 80px rgba(0,0,0,0.25);
+}
+
+.play .imgbx{
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.play .imgbx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play audio{
+    width:100%;
+    outline: none;
+}
+
+
+
+
+    </style>
+    </head>
+    <body>
+        <section>
+        
+        <h2>Quem sou eu?</h2>
+        
+            <p>Oi, meu nome é Diogo Coutinho Cassemiro, tenho 19 anos e 3 4 anos de estudo na area de tecnologia. Sou autodidata em programação de desenvolvimento web e web design. Me considero já um desenvolvedor de conhecimento PLENO, devido amor pelo estudo dessa area me aprimorei para ser bem esforçado e garantir oportunidades onde nunca imaginei chegar sem curso ou certificado algum. Aliás, autodidata é isso mesmo né, estudante amador própria influência. Usarei este website como currículo para apresentar informações de atividades e experiencias dessa jornada.</p>
+            
+            <div class="play">
+        <div class="imgbx">
+            <img src="https://api.sololearn.com/Uploads/Avatars/19634088.jpg">
+        </div>
+        <audio controls>
+            <source src="https://dl.dropbox.com/s/5jyylqps64nyoez/Legends%20never%20die.mp3?dl=0" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <center>
+        <p><b><i>Diogo Cass © 2001 2021</i></b></p>
+    </center>
+        </section>
+        <header>
+            
+            <div class="ptext">
+      <span data-aos="zoom-in" class="border">
+        Portfolio • Diogo
+      </span>
+    </div>
+        </header>
+    
+    </body>
+</html>
