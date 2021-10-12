@@ -1,0 +1,247 @@
+<!----------------------------------------------
+
+Name: Nasa Api Photos ∆
+Lang: CSS, HTML, JAVASCRIPT
+12/10/21: Diogo Cass
+
+˜”*°•.˜”*°• — •°*”˜.•°*”˜˜”*°•.˜”*°• — •°*”˜
+
+Txt Biblico Codio: Salmo 23 - O Senhor é meu pastor...
+
+----------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Fotos da Nasa | MiUI | By Diogo Cass</title>
+
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script-->
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+<style>
+    :root {
+        --white1: #FFFFFF;
+        --white2: #C2C2C2;
+        --white3: #8C8C8C;
+        --dark1: #000006;
+        --dark2: #161616;
+        --dark3: #202020;
+        --blue1: #00A6FF;
+        --purple1: #7428FF;
+    }
+    
+    ::-webkit-scrollbar {
+        height:8px;
+        width:8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background: var(--white3);
+    }
+    
+    ::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    * {
+        user-select: none;
+    }
+
+    body {
+        font-family: Poppins;
+        background: var(--dark1);
+        padding: 0 10px;
+    }
+    
+    @media only screen and (min-width: 500px) {
+        .postimgwrap {
+            min-height: 200px;
+        }
+    }
+    
+    @media only screen and (max-width: 500px) {
+        .postimgwrap {
+            min-height: 40vw;
+        }
+    }
+    
+    .postimgwrap {
+        width: 100%;
+        padding: 0px;
+        height: auto;
+        margin: 10px 0px;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .postimg1 {
+        width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+        margin: 0 0 -8px 0;
+    }
+    
+    .loadanim {
+        background: linear-gradient(
+        120deg,
+        var(--dark3) 30%,
+        var(--dark2) 38%,
+        var(--dark2) 40%,
+        var(--dark3) 48%
+        );
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        animation: load 1.4s infinite;
+    }
+    
+    #body {
+        display: block;
+    }
+    
+    @keyframes load{
+        100%{
+            background-position: -100% 0;
+        }
+    }
+    
+    .card1 {
+        margin: 20px auto;
+        padding: 0px;
+        max-width: 400px;
+        background: var(--dark2);
+        border-radius: 10px;
+    }
+    
+    .txthold1 {
+        padding: 6px 10px 16px 14px;
+    }
+
+    .txthold2 {
+        padding: 16px;
+    }
+    
+    .styledtxt {
+        font-weight: 600;
+        background: linear-gradient(140deg,var(--purple1),var(--blue1));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    
+    .txthold1 .styledtxt {
+        font-size: 18px;
+    }
+
+    .txt1 {
+        color: var(--white1);
+        font-size: 14px;
+    }
+    
+    .txt2 {
+        color: var(--white3);
+        font-size: 14px;
+    }
+    
+    .txt3 {
+        color: var(--white2);
+        font-size: 14px;
+    }
+    
+    .txt4 {
+        color: var(--white3);
+        font-size: 12px;
+    }
+    
+    .flexx {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+        line-height: 1.1;
+    }
+    
+    .img2 {
+        width: 40px;
+        height: 40px;
+        border-radius: 0 4px 4px 0;
+    }
+
+    .imghold1 {
+        width: 40px;
+        height: 40px;
+        background: var(--dark3);
+        border-radius: 4px;
+        border-left: 4px solid var(--blue1);
+    }
+    
+    .flexx .sect1 {
+        width: 100%;
+        margin: 0 10px;
+    }
+    
+    .footer1 {
+        padding: 14px 10px;
+        text-align: center;
+    }
+    
+    .footer1 .styledtxt {
+        font-size: 14px;
+    }
+</style>
+</head>
+<body id="body">
+
+<section class="card1">
+<section class="loadanim postimgwrap"><img id="img" class="postimg1" onerror=this.style.opacity=0></section>
+<section class="txthold1"><span id="tit" class="styledtxt">Title</span><br><span id="day" class="txt2">Day Today</span></section>
+</section>
+
+<section class="card1">
+<section class="txthold2"><span id="txt" class="txt2">Content</span></section>
+</section>
+
+<section class="card1">
+<section id="sec1" class="txthold2"><center><span class="txt1">Follow me & Share Love :)</span></center>
+</section>
+</section>
+
+<section class="card1">
+<section id="sec2" class="txthold2"><span class="txt1">My Social Midias:</span><br>
+</section>
+</section>
+
+<section class="card1"><section class="footer1"><span class="txt1">Coded by </span><span class="txt5 styledtxt">Diogo Coutinho Cassemiro</span></section></section>
+
+<script>
+
+function createflex(iid, imgsrc, txt1, txt2){
+    document.getElementById(iid).innerHTML += '<section class="flexx"><section class="imghold1"><img class="img2" src="'+imgsrc+'" onerror=this.style.opacity=0></section><br><section class="sect1"><span class="txt3">'+txt1+'</span><br><span class="txt4">'+txt2+'</span></section></section>';
+}
+
+createflex('sec2', 'https://i.ibb.co/WgDbQ4Y/IMG-20211012-WA0145.jpg', 'Facebook', 'Diogo Coutinho Cassemiro');
+createflex('sec2', 'https://i.ibb.co/2q1Ld1d/IMG-20211012-WA0146.jpg', 'Instagram', '@diogocoutcass');
+createflex('sec2', 'https://i.ibb.co/VWQ5hx9/IMG-20211012-WA0144.jpg', 'Whatsapp', '+55 51 996748252');
+
+/*
+createflex('sec1', 'https://i.ibb.co/M5xRhxk/a1.jpg', 'nome', 'textinho');
+createflex('sec1', 'https://i.ibb.co/2jdm8Vx/b1.jpg', 'nome', 'textinho');
+createflex('sec1', 'https://i.ibb.co/WfGj4nZ/c.jpg', 'nome', 'textinho');
+*/
+
+(async () => { // authorCode: Diogo Coutinho Cassemiro
+var api = "https://api.nasa.gov/planetary/apod?api_key"
+var key = "=XA6IuMbstRjVQf0EFkp2cdhQPOB4QuLhsMZUu4B5"
+ const res = await fetch(api+key);
+ const data = await res.json();
+ var $ = (s)=(s)=s=>document.getElementById(s);
+ $("tit").innerHTML = data.title;
+ $("txt").innerHTML = data.explanation;
+ $("img").src = data.url;
+ const d = new Date();
+ $("day").innerHTML = d.toDateString();
+})(); // output: return 3 value from NASA website.
+
+</script>
+
+</body>
+</html>
